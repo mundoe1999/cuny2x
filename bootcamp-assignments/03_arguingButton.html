@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Arguing buttons</title>
+  <link rel="stylesheet" href="03_style.css">
+</head>
+<body id="arguingButton">
+  <h1 id="text">Press a button</h1>
+  <button id="left">Click me!</button>
+  <button id="right">no, Click me!</button>
+
+  <script>
+    var leftButton = document.getElementById('left');
+    var rightButton = document.getElementById('right');
+    var text = document.getElementById('text');
+    var hasPressed = false;
+
+    //Left button is the button that needs to be pressed first
+    leftButton.addEventListener('click', function (){
+      if(!hasPressed){
+        text.innerHTML = "I'm right!";
+        hasPressed = !hasPressed;
+      }
+    });
+
+    //Right button needs to be pressed second
+    rightButton.addEventListener('click', function (){
+      if(hasPressed){
+        text.innerHTML = "No, I'm right!";
+        hasPressed = !hasPressed;
+      }
+    });
+
+  
+  </script>
+</body>
+</html>
